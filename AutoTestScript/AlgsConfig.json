@@ -1,0 +1,145 @@
+{
+	"name": "algs_master",
+	"version": "1.0.1",
+	"device": "YVR3",
+	"alg": {
+		"thread_enhance": 1,
+		"controller": {
+			"img": {
+				"affinity": "0x07",
+				"priority": 46,
+				"type": 2,
+				"cameras" : 6
+			},
+			"imu": {
+				"affinity": "0x07",
+				"priority": 50,
+				"type": 2
+			},
+			"ALG_IMU_Thread": {
+				"affinity": "0x07",
+				"priority": 46,
+				"type": 2
+			},
+			"ALG_IMG_Thread": {
+				"affinity": "0x07",
+				"priority": 46,
+				"type": 2
+			},
+			"ALG_LBA_Thread": {
+				"affinity": "0x07",
+				"priority": 46,
+				"type": 2
+			}
+		},
+		"slam": {
+			"ImuReader": {
+				"affinity": "0x01",
+				"priority": 52,
+				"type": 2
+			},
+			"img": {
+				"affinity": "0x07",
+				"priority": 48,
+				"type": 2
+			},
+			"dep": {
+				"affinity": "0x07",
+				"priority": 48,
+				"type": 2
+			},
+			"map": {
+				"affinity": "0x07",
+				"priority": 20,
+				"type": 2
+			},
+			"loop": {
+				"affinity": "0x07",
+				"priority": 48,
+				"type": 2
+			},
+			"gba": {
+				"affinity": "0x07",
+				"priority": 48,
+				"type": 2
+			}
+		},
+		"hands": {
+			"img": {
+				"affinity": "0x07",
+				"priority": 49,
+				"type": 2,
+				"fps" : 60
+			}			
+		},
+		"mesh": {
+			"TOF_TRACKING_SYNC": {
+				"affinity": "0x07",
+				"priority": 47,
+				"type": 2
+			},
+			"img": {
+				"affinity": "0x07",
+				"priority": 47,
+				"type": 2
+			},
+			"MeshPlaneDetection": {
+				"affinity": "0x07",
+				"priority": 47,
+				"type": 2
+			},
+			"MeshRequestBoundary": {
+				"affinity": "0x07",
+				"priority": 47,
+				"type": 2
+			},
+			"MeshSceneDepth": {
+				"affinity": "0x07",
+				"priority": 48,
+				"type": 2
+			}
+		},
+		"mapping": {
+			"img": {
+				"affinity": "0x07",
+				"priority": 20,
+				"type": 2
+			}			
+		},
+		"monitor": {
+			"AM_SENSOR_CHECK": {
+				"affinity": "0x02",
+				"priority": 200,
+				"type": 2,
+				"activate": 0
+			},
+			"AM_LOADING_CHECK": {
+				"affinity": "0x02",
+				"priority": 200,
+				"type": 2,
+				"activate": 0
+			}		
+		}
+	},
+	"debug": {
+		"mask": "0xFF"
+	},
+	"algs_data_io": {
+		"mode": 0
+	},
+	"algs_latency_monitor": {
+		"enable": 0
+	},
+	"algs_share_memory_poses": {
+		"enable": 0
+	},
+	"yvr_log":
+	{
+		"Guides" : "DEBUG=0, INFO=1, WARN=2, ERR=3",
+		"level"  : 3,
+		"log_ctrl_debug" : 0,
+		"log_ctrl_info"  : 1,
+		"log_ctrl_warn"  : 1,
+		"log_ctrl_error" : 1
+	}
+}
